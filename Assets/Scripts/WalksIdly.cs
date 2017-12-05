@@ -7,6 +7,7 @@ public class WalksIdly : MonoBehaviour {
     public float walkDistance;
 
     float destination;
+    float walkTime;
 
 	// Use this for initialization
 	void Start ()
