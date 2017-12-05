@@ -166,10 +166,11 @@ public class Player : MonoBehaviour {
         if (target.GetComponent<HasBlood>().holy)
         {
             health.attacked(holyDamage);
+            garlicAmount = 0;
         }
         else
         {
-            health.repair(25);
+            health.repair(target.GetComponent<HasBlood>().healFactor);
         }
 
         Destroy(target);
