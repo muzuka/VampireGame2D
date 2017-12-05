@@ -31,6 +31,13 @@ public class SpawnsCitizens : MonoBehaviour {
             spawnTimer.update(spawnCitizen);
         }
 
+        for(int i = citizens.Count - 1; i >= 0; i--)
+        {
+            if (citizens[i] == null)
+            {
+                citizens.RemoveAt(i);
+            }
+        }
 	}
 
     void spawnCitizen ()
