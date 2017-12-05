@@ -117,7 +117,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.24, y: 3.94}
+  m_Size: {x: 2.24, y: 3.79}
   m_EdgeRadius: 0
 --- !u!114 &114138118818593054
 MonoBehaviour:
@@ -133,7 +133,7 @@ MonoBehaviour:
   maxHealth: 100
   maxGarlic: 100
   attackRange: 2
-  movementSpeed: 5
+  movementSpeed: 4
   stopDistance: 0.3
   jumpSpeed: 2
   lightDamage: 25
