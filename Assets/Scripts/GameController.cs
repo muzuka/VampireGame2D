@@ -12,12 +12,19 @@ public class GameController : MonoBehaviour {
     public GameObject LoseMenu;
     public GameObject PauseMenu;
 
+    AudioSource source;
+
+    int levels = 3;
+
 	// Use this for initialization
 	void Start ()
     {
         WinMenu.SetActive(false);
         LoseMenu.SetActive(false);
         PauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        paused = false;
+        source = GetComponent<AudioSource>();
 	}
 
     void OnEnable ()
@@ -65,6 +72,11 @@ public class GameController : MonoBehaviour {
         LoseMenu.GetComponentInChildren<Button>().Select();
     }
 
+    public void mute ()
+    {
+        source.mute = !source.mute;
+    }
+
     public void resume ()
     {
         PauseMenu.SetActive(false);
@@ -75,6 +87,18 @@ public class GameController : MonoBehaviour {
     public void retry ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void nextLevel ()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == levels)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void mainMenu ()
