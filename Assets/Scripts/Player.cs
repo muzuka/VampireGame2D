@@ -31,6 +31,8 @@ public class Player : MonoBehaviour {
     float jumpTimeCounter;
     bool stoppedJumping;
 
+    public ParticleSystem smokeEffect;
+    
     bool grounded;
     public LayerMask whatIsGround;
     public Transform groundCheck;
@@ -121,6 +123,14 @@ public class Player : MonoBehaviour {
             if (inLight)
             {
                 health.attacked(Time.deltaTime * lightDamage);
+                if (!smokeEffect.isPlaying)
+                {
+                    smokeEffect.Play();
+                }
+            }
+            else
+            {
+                smokeEffect.Stop();
             }
         }
 	}
