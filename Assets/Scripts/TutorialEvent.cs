@@ -16,5 +16,6 @@ public class TutorialEvent
     public Collider2D ColliderA;
     public Collider2D ColliderB;
     public bool Triggered = false;
+    [TextArea]
     public string Message;
 }
